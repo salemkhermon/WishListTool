@@ -1,0 +1,19 @@
+<div class = "card">
+ <h4 class="card-header">Wish List</h4>
+ <div class ="card-body">
+     <form [formGroup]="wishListForm" class="example-form" (ngSubmit)="onSubmit()">
+    <!-- <mat-form-field class="example-full-width">
+      <input matInput placeholder="">
+    </mat-form-field> -->
+  
+     <textarea type ="textarea"  placeholder="preview links" formControlName="previewLinks"  class="form-control"
+               [ngClass]="{ 'is-invalid': submitted && formControls.previewLinks.errors }" class="example-full-width">
+    </textarea><br><br>
+    
+    <div *ngIf="submitted && formControls.previewLinks.errors" class="invalid-feedback">
+        <div *ngIf="formControls.previewLinks.errors.required">Please insert at least one link</div>
+     </div>
+    <button class="btn btn-primary">Submit</button>
+  </form>
+</div>
+</div>

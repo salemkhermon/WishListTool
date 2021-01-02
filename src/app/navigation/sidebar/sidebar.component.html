@@ -1,0 +1,106 @@
+<div class="sidebar_menu" [@onSideNavChange]="sidebarState">
+    <mat-nav-list class="menu-list">
+      <mat-list-item
+        (click)="showSubmenu = !showSubmenu"
+        class="parent"
+        routerLinkActive="active-list-item"
+        routerLink=""
+        title="af"
+      >
+        <mat-icon
+          class="icon menu-icon"
+          style="font-size: 1em !important;"
+          [@iconAnimation]="sidebarState"
+          >input</mat-icon
+        >
+        <mat-icon
+          class="menu-button"
+          [ngClass]="{'rotated' : showSubmenu}"
+          *ngIf="isExpanded || isShowing"
+          >expand_more</mat-icon
+        >
+        <span class="label" [@labelAnimation]="sidebarState">Account</span>
+      </mat-list-item>
+      <div
+        class="submenu"
+        [ngClass]="{'expanded' : showSubmenu}"
+        *ngIf="showSubmenu && (isShowing || isExpanded)"
+      >
+        <a mat-list-item routerLink="/login">Sign in</a>
+        <a mat-list-item routerLink="/register" 
+          >Sign Up</a
+        >
+        <a routerLink="/wishList"> <mat-list-item *ngIf ="accountService.isUserLoggedIn()"> Wish Tool </mat-list-item></a>
+  
+        <mat-list-item (click)="showSubSubMenu = !showSubSubMenu" class="parent">
+          <span class="full-width" *ngIf="isExpanded || isShowing"
+            >Nested Menu</span
+          >
+          <mat-icon
+            class="menu-button"
+            [ngClass]="{'rotated' : showSubSubMenu}"
+            *ngIf="isExpanded || isShowing"
+            >expand_more</mat-icon
+          >
+        </mat-list-item>
+        <div
+          class="submenu"
+          [ngClass]="{'expanded' : showSubSubMenu}"
+          *ngIf="isShowing || isExpanded"
+        >
+          <mat-list-item>SubSubmenu Item 1</mat-list-item>
+          <mat-list-item>SubSubmenu Item 2</mat-list-item>
+        </div>
+      </div>
+      <mat-divider></mat-divider>
+      <mat-list-item
+        routerLinkActive="active-list-item"
+        routerLink="aboutUs"
+        title="About us"
+      >
+        <mat-icon class="icon" [@iconAnimation]="sidebarState"
+          >info</mat-icon
+        >
+        <span class="label" [@labelAnimation]="sidebarState">About Wish List</span>
+      </mat-list-item>
+      <mat-list-item
+        routerLinkActive="active-list-item"
+        routerLink="work"
+        title="Work"
+      >
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">work</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Work</span>
+      </mat-list-item>
+      <mat-list-item
+        routerLinkActive="active-list-item"
+        routerLink="feedback"
+        title="Feedback"
+      >
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">contact_support</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Contact us</span>
+      </mat-list-item>
+    </mat-nav-list>
+  </div>
+  
+  <!-- <div class="sidebar_menu" [@onSideNavChange]="sidebarState">
+    <mat-nav-list class="menu-list">
+      <a mat-list-item routerLinkActive="active-list-item" routerLink="login" title="Login">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">input</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Login</span>
+      </a>
+      <mat-divider></mat-divider>
+      <a mat-list-item routerLinkActive="active-list-item" routerLink="dashboard" title="Dashboard">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">dashboard</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Dashboard</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" routerLink="work" title="Work">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">work</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Work</span>
+      </a>
+      <a mat-list-item routerLinkActive="active-list-item" routerLink="feedback" title="Feedback">
+        <mat-icon class="icon" [@iconAnimation]="sidebarState">feedback</mat-icon>
+        <span class="label" [@labelAnimation]="sidebarState">Feedback</span>
+      </a>
+    </mat-nav-list>
+  </div> -->
+  
