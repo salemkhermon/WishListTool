@@ -13,6 +13,9 @@ import { AccountModule } from './account/account.module';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { AboutUsComponent } from './about-us/about-us.component';
+import { HttpClientModule } from '@angular/common/http';
+
+
 
 @NgModule({
   declarations: [
@@ -31,7 +34,8 @@ import { AboutUsComponent } from './about-us/about-us.component';
     SidebarModule,
     ToggleSidebarModule,
     AccountModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

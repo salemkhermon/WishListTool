@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AccountService } from 'src/app/account/account.service';
+import { LoginService } from 'src/app/services/login.service';
 import { sidebarAnimation, iconAnimation, labelAnimation } from 'src/app/animations';
 import { SidebarService } from '../service/sidebar.service';
 
@@ -20,7 +20,7 @@ export class SidebarComponent implements OnInit {
   isShowing = false;
   showSubSubMenu: boolean = false;
 
-  constructor(private sidebarService: SidebarService ,public accountService :AccountService) { }
+  constructor(private sidebarService: SidebarService ,public accountService :LoginService) { }
 
   ngOnInit(): void {
     this.sidebarService.sidebarStateObservable$.

@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
 import { MaterialModule } from '../material.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { LoginService } from '../services/login.service';
+import { HttpClient } from '@angular/common/http';
 
 
 
@@ -15,6 +17,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     
   ],
-  exports :[LoginComponent,RegisterComponent]
+  exports :[LoginComponent,RegisterComponent],
+  providers : []
 })
 export class AccountModule { }
